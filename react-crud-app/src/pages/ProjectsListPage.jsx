@@ -8,7 +8,7 @@ function ProjectsListPage(){
     const [projects, setProjects] = useState([]);
 
     useEffect(()=>{
-        axios.get(`${API_URL}/books`)
+        axios.get(`${API_URL}/projects`)
         .then((response)=> setProjects(response.data))
         .catch((error)=> console.log(error));
     }, [])

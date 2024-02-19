@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom';
 import axios from 'axios';
 
 
-const API_URL = "https://project-management-api-4641927fee65.herokuapp.com";
+const API_URL = "http://localhost:3000";
 
 function ProjectDetailsPage() {
   const [project, setProject] = useState({})

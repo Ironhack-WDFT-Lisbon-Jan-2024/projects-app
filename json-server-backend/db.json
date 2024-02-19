@@ -1,11 +1,5 @@
 {
-  "books": [
-    {
-      "id": 1,
-      "title": "Module 2 Project",
-      "description": "Module 2 project - Integrate a React app with backend.",
-      "userId": 1
-    },
+  "projects": [
     {
       "id": 2,
       "title": "Module 3 Project",
@@ -13,17 +7,7 @@
       "userId": 1
     }
   ],
-  "reviews": [
-    {
-      "id": 1,
-      "projectId": 1,
-      "description": "Use Vite to create a basic React app"
-    },
-    {
-      "id": 2,
-      "projectId": 1,
-      "description": "Install React Router and setup routes"
-    },
+  "tasks": [
     {
       "id": 3,
       "projectId": 2,
