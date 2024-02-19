@@ -13,8 +13,11 @@ function ProjectsListPage(){
         .catch((error)=> console.log(error));
     }, [])
 
-    return(<div>
-        {projects && projects.map((project)=>{
+    return (
+      <div>
+        <Link to="/add-project">Add a Project</Link>
+        {projects &&
+          projects.map((project) => {
             return (
               <div key={project.id}>
                 <Link to={`/projects/${project.id}`}>
@@ -25,8 +28,9 @@ function ProjectsListPage(){
                 </Link>
               </div>
             );
-        })}  
-    </div>)
+          })}
+      </div>
+    );
 }
 
 export default ProjectsListPage

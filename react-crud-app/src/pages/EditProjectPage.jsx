@@ -12,32 +12,38 @@ function EditProjectPage(){
     const navigate = useNavigate();
 
     useEffect(()=>{
-        axios.get(`${API_URL}/books/${id}`).then((response)=>{
+        axios
+          .get(`${API_URL}/projects/${id}`)
+          .then((response) => {
             setTitle(response.data.title);
             setDescription(response.data.description);
-        }).catch((error)=> console.log(error))
+          })
+          .catch((error) => console.log(error));
     }, [])
 
-    const handleSubmit = (e) =>{
-        e.preventDefault();
-        
-        const data = {title, description};
+    const handleSubmit = (e) => {
+      e.preventDefault();
 
-        axios.put(`${API_URL}/projects/${id}`, data)
-        .then(()=>{
-            navigate("/projects");
-        })
-        .catch((error)=>{
-            console.log(error)
-        })
-    }
+      const data = { title, description };
 
-    const deleteProject = () =>{
-        axios.delete(`${API_URL}/projects/${id}` ).then(()=>{
-            navigate("/projects");
+      axios
+        .put(`${API_URL}/projects/${id}`, data)
+        .then(() => {
+          navigate("/");
         })
-        .catch((error)=>console.log(error));
-    }
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+
+    const deleteProject = () => {
+      axios
+        .delete(`${API_URL}/projects/${id}`)
+        .then(() => {
+          navigate("/");
+        })
+        .catch((error) => console.log(error));
+    };
 
     return (
       <article>

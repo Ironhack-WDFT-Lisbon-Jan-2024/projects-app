@@ -15,9 +15,10 @@ function AddProjectPage(){
 
         const project = {title, description};
 
-        axios.post(`${API_URL}/projects`, project)
-        .then(()=> navigate("/projects"))
-        .catch((error)=> console.log(error));
+        axios
+          .post(`${API_URL}/projects`, project)
+          .then(() => navigate("/"))
+          .catch((error) => console.log(error));
 
 
 
